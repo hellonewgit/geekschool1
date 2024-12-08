@@ -1,3 +1,13 @@
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -12,6 +22,21 @@ body {
     width: 416px;
     border-radius: 24px;
     justify-content: center;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: orange !important;
+}
+
+.logo {
+    animation-name: rotation;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.logo:hover {
+    animation-play-state: paused;
 }
 
 .hero-title {
@@ -89,6 +114,10 @@ body {
     background-color: #fcb8ff;
 }
 
+.footer-link:nth-child(2) {
+    margin: 0 24px;
+}
+
 @media (max-width: 1400px) {
     .hero-title {
         font-size: 48px;
@@ -133,5 +162,13 @@ body {
 
     .hero-title {
         font-size: 38px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-link:nth-child(2) {
+        margin: 0;
     }
 }
